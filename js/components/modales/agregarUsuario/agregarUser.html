@@ -1,0 +1,55 @@
+<body>
+    <link rel="stylesheet" href="agregarUser.css">
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>AGREGAR USUARIO</h2>
+            </div>
+            
+            <form id="userForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre(s)*</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="primerApellido">Primer Apellido*</label>
+                        <input type="text" id="primerApellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="segundoApellido">Segundo Apellido*</label>
+                        <input type="text" id="segundoApellido" required>
+                    </div>
+                </div>
+
+                <div class="form-row single">
+                    <div class="form-group">
+                        <label for="turno">Turno</label>
+                        <select id="turno">
+                            <option value="">Seleccionar...</option>
+                            <option value="Matutino">Matutino</option>
+                            <option value="Vespertino">Vespertino</option>
+                            <option value="Nocturno">Nocturno</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="clave">Cargo</label>
+                        <select id="clave">
+                            <option value="">Seleccionar...</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Usuario">Usuario</option>
+                            <option value="Supervisor">Supervisor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-save">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <link rel="stylesheet" href="agregarUser.css">
+    <script src="agregarUser.js"></script>    
+</body>

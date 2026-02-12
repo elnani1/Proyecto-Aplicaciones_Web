@@ -1,0 +1,145 @@
+/* Configuración general */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor general */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sección izquierda */
+.left-section {
+    flex: 1;
+    background-color: #f2e8dd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.location {
+    color: #b46a3a;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Sección derecha */
+.right-section {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    text-align: center;
+    width: 300px;
+}
+
+.user-icon img {
+    width: 150px;
+    height: 150px;
+    border-radius:25px;
+    padding: 15px;
+}
+
+h2 {
+    margin: 15px 0 25px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    font-size: 13px;
+    color: #333;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #aaa;
+    padding: 8px 0;
+    outline: none;
+    font-size: 14px;
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    cursor: pointer;
+}
+
+/* Botón */
+button {
+            margin-top: 15px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            background: #9c6a63;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            background: #82564f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(156, 106, 99, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+/* LOGIN */
+        .login-text {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .login-text a {
+            color: #9c6a63;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .login-text a:hover {
+            color: #82564f;
+            text-decoration: underline;
+        }

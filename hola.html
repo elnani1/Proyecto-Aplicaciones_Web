@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administrador - Stock Solution</title>
+  <link rel="stylesheet" href="./css/hola.css">
+  <link rel="stylesheet" href="./js/components/modales/agregarUsuario/agregarUser.css">
+  <link rel="stylesheet" href="./js/components/modales/EditarUsuario/editarUser.css">
+  <link rel="stylesheet" href="./js/components/modales/eliminarUsuario/eliminarUser.css">
+</head>
+
+<body>
+  <div class="admin-container">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+      <img src="./img/Placeholder 2.png" alt="Stock-Solution Logo" class="logo">
+      <p class="location">CD. OBREGÓN, SONORA</p>
+    </aside>
+
+      <p class="location"></p>
+    </aside>
+    
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <!-- Encabezado  -->
+      <iframe src="./js/components/header/header.html" width="100%" height="300px" style="border:none;"></iframe>
+      <!-- Botones de acción -->
+      <iframe src="./js/components/Botones/botones.html" width="100%" height="100px" style="border:none;"></iframe>
+      <!-- Tabla de usuarios -->
+      <iframe src="./js/components/tabla/tabla.html" width="100%" height="600px" style="border:none;"></iframe>
+    </main>
+  </div>
+
+
+ <!-- MODAL AGREGAR USUARIO -->
+<div id="modalOverlay" class="modal-overlay hidden">
+  <div class="modal">
+    
+    <div class="modal-header">
+      <h2>AGREGAR USUARIO</h2>
+    </div>
+
+    <form id="userForm">
+      
+      <!-- FILA 1: Nombre y apellidos -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre(s)*</label>
+          <input type="text" id="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="primerApellido">Primer Apellido*</label>
+          <input type="text" id="primerApellido" required>
+        </div>
+
+        <div class="form-group">
+          <label for="segundoApellido">Segundo Apellido*</label>
+          <input type="text" id="segundoApellido" required>
+        </div>
+      </div>
+
+      <!-- FILA 2: Turno y Cargo -->
+      <div class="form-row single">
+        <div class="form-group">
+          <label for="turno">Turno</label>
+          <select id="turno">
+            <option value="">Seleccionar...</option>
+            <option value="Matutino">Matutino</option>
+            <option value="Vespertino">Vespertino</option>
+            <option value="Nocturno">Nocturno</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="clave">Cargo</label>
+          <select id="clave">
+            <option value="">Seleccionar...</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Usuario">Usuario</option>
+            <option value="Supervisor">Supervisor</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- BOTONES -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cancel" onclick="closeModal()">Cancelar</button>
+        <button type="submit" class="btn btn-save">Guardar</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+  <!-- Modal Editar Usuario -->
+  <div id="modalOverlayEditar" class="modal-overlay-editar hidden">
+    <div class="modal-editar">
+      <div class="modal-header-editar">
+        <h2>EDITAR USUARIO</h2>
+      </div>
+      
+      <form id="userFormEditar">
+        <div class="form-row-editar">
+          <div class="form-group-editar">
+            <label for="nombreEditar">Nombre(s)*</label>
+            <input type="text" id="nombreEditar" required>
+          </div>
+          <div class="form-group-editar">
+            <label for="primerApellidoEditar">Primer Apellido*</label>
+            <input type="text" id="primerApellidoEditar" required>
+          </div>
+          <div class="form-group-editar">
+            <label for="segundoApellidoEditar">Segundo Apellido*</label>
+            <input type="text" id="segundoApellidoEditar" required>
+          </div>
+        </div>
+
+        <div class="form-row-editar single">
+          <div class="form-group-editar">
+            <label for="turnoEditar">Turno</label>
+            <select id="turnoEditar">
+              <option value="">Seleccionar...</option>
+              <option value="matutino">Matutino</option>
+              <option value="vespertino">Vespertino</option>
+              <option value="nocturno">Nocturno</option>
+            </select>
+          </div>
+          <div class="form-group-editar">
+            <label for="cargoEditar">Cargo</label>
+            <select id="cargoEditar">
+              <option value="">Seleccionar...</option>
+              <option value="admin">Administrador</option>
+              <option value="usuario">Usuario</option>
+              <option value="supervisor">Supervisor</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-footer-editar">
+          <button type="button" class="btn-editar btn-cancel-editar" onclick="closeModalEditar()">Cancelar</button>
+          <button type="submit" class="btn-editar btn-update">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Eliminar Usuario -->
+  <div id="modalOverlayEliminar" class="modal-overlay-eliminar hidden">
+    <div class="modal-eliminar">
+      <div class="icon-container">
+        <div class="warning-icon">
+          <span class="exclamation">!</span>
+        </div>
+      </div>
+      
+      <div class="modal-message">
+        <p>¿Estás seguro que quieres eliminar usuario?</p>
+      </div>
+
+      <div class="modal-footer-eliminar">
+        <button type="button" class="btn-eliminar btn-cancel-eliminar" onclick="closeModalEliminar()">Cancelar</button>
+        <button type="button" class="btn-eliminar btn-accept" onclick="eliminarUsuario()">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts de los modales -->
+  <script src="./js/components/modales/agregarUsuario/agregarUser.js"></script>
+  <script src="./js/components/modales/EditarUsuario/editarUser.js"></script>
+  <script src="./js/components/modales/eliminarUsuario/eliminarUser.js"></script>
+</body>
+
+</html>

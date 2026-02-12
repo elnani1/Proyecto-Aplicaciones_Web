@@ -1,0 +1,23 @@
+/* Botones principales */
+.actions {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+  overflow-y: hidden;
+	overflow-x: hidden;
+  
+}
+
+.btn-primary {
+  background-color: #9c6a63;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #82564f;
+}
